@@ -1,6 +1,110 @@
-import { motion } from 'motion/react';
-import { ArrowUpRight } from 'lucide-react';
-import { Magnetic } from '../components/Navigation';
+import { motion, useScroll, useTransform } from 'motion/react';
+import { useRef } from 'react';
+
+function AboutHero() {
+  return (
+    <section className="min-h-screen flex items-center justify-center bg-black pt-32 px-4 overflow-hidden relative">
+      <div className="absolute inset-0 bg-noise opacity-30 mix-blend-overlay pointer-events-none" />
+      <div className="w-full max-w-[100vw] overflow-hidden flex flex-col items-center">
+        <motion.h1 
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          className="text-[12vw] font-black tracking-tighter leading-[0.8] text-white uppercase text-center hover-trigger"
+          data-cursor-text="WHO?"
+        >
+          NOT YOUR
+        </motion.h1>
+        <motion.h1 
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          className="text-[12vw] font-black tracking-tighter leading-[0.8] text-transparent text-stroke-2 font-serif italic uppercase text-center hover-trigger"
+          data-cursor-text="AVERAGE"
+        >
+          AVERAGE
+        </motion.h1>
+        <motion.h1 
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+          className="text-[12vw] font-black tracking-tighter leading-[0.8] text-cyan-500 uppercase text-center hover-trigger"
+          data-cursor-text="DEV"
+        >
+          DEVELOPER.
+        </motion.h1>
+      </div>
+    </section>
+  );
+}
+
+function ExperienceRow({ year, title, company, desc }: { year: string, title: string, company: string, desc: string }) {
+  return (
+    <div className="border-t border-white/20 py-12 flex flex-col md:flex-row gap-8 hover:bg-white hover:text-black transition-colors duration-500 group hover-trigger px-4 md:px-10" data-cursor-text="READ">
+      <div className="md:w-1/4 font-mono text-xl opacity-50 group-hover:opacity-100 transition-opacity">{year}</div>
+      <div className="md:w-1/2">
+        <h3 className="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-4">{title}</h3>
+        <p className="text-xl opacity-50 group-hover:opacity-100 font-mono uppercase tracking-widest transition-opacity">{company}</p>
+      </div>
+      <div className="md:w-1/4 text-sm font-mono leading-relaxed opacity-50 group-hover:opacity-100 transition-opacity">
+        {desc}
+      </div>
+    </div>
+  );
+}
+
+function Experience() {
+  const experiences = [
+    { year: "2024 — PRESENT", title: "LEAD ARCHITECT", company: "NEXUS CORP", desc: "Spearheading the transition to edge computing and micro-frontends. Reduced load times by 400%." },
+    { year: "2022 — 2024", title: "CREATIVE DEV", company: "STUDIO VOID", desc: "Built award-winning WebGL experiences for global brands. Pushed the limits of browser rendering." },
+    { year: "2020 — 2022", title: "UI ENGINEER", company: "FINTECH X", desc: "Developed a robust design system used by 50+ developers across 12 different product lines." },
+  ];
+
+  return (
+    <section className="py-32 bg-black text-white">
+      <div className="max-w-screen-2xl mx-auto">
+        <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-20 px-4 md:px-10 uppercase">
+          THE <span className="text-transparent text-stroke-1 font-serif italic">TIMELINE</span>
+        </h2>
+        <div className="border-b border-white/20">
+          {experiences.map((exp, i) => (
+            <ExperienceRow key={i} {...exp} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function SkillsGrid() {
+  const skills = [
+    "REACT", "NEXT.JS", "TYPESCRIPT", "WEBGL", "THREE.JS", "FRAMER MOTION", 
+    "TAILWIND", "NODE.JS", "RUST", "GRAPHQL", "FIGMA", "SHADERS"
+  ];
+
+  return (
+    <section className="py-32 bg-white text-black relative overflow-hidden">
+      <div className="absolute inset-0 bg-noise opacity-20 mix-blend-overlay pointer-events-none" />
+      <div className="max-w-screen-2xl mx-auto px-4 md:px-10">
+        <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-20 uppercase">
+          ARSENAL
+        </h2>
+        <div className="flex flex-wrap gap-4">
+          {skills.map((skill, i) => (
+            <div 
+              key={i} 
+              className="text-4xl md:text-7xl font-black uppercase tracking-tighter hover:text-transparent hover:text-stroke-2 transition-all duration-300 hover-trigger cursor-crosshair"
+              data-cursor-text="SKILL"
+            >
+              {skill}
+              {i !== skills.length - 1 && <span className="mx-4 opacity-20">•</span>}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export default function About() {
   return (
@@ -9,86 +113,13 @@ export default function About() {
       animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
       exit={{ opacity: 0, y: -40, filter: 'blur(10px)' }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      className="min-h-screen bg-black text-slate-300 font-sans pt-32 pb-20 px-4 md:px-20"
+      className="bg-black text-slate-300 font-sans relative"
     >
-      <div className="max-w-7xl mx-auto">
-        <motion.h1 
-          initial={{ y: 50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          className="text-6xl md:text-[10vw] font-black tracking-tighter leading-[0.85] text-white mix-blend-difference mb-20"
-        >
-          THE <span className="font-serif italic text-stroke-2">MIND</span><br/>BEHIND THE CODE.
-        </motion.h1>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5, duration: 1 }}
-            className="text-xl md:text-3xl font-medium leading-relaxed"
-          >
-            <p className="mb-8">
-              I am a creative engineer obsessed with the intersection of <span className="text-white">design</span> and <span className="text-white">technology</span>.
-            </p>
-            <p className="text-slate-500">
-              For the past 5 years, I've been building digital experiences that don't just function, but feel alive. I believe that the best software is indistinguishable from magic.
-            </p>
-          </motion.div>
-
-          <div className="space-y-12">
-            <motion.div 
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.7, duration: 1 }}
-            >
-              <h3 className="text-sm font-mono tracking-widest uppercase text-white/50 mb-6 border-b border-white/10 pb-4">Capabilities</h3>
-              <ul className="space-y-4 text-lg">
-                <li className="flex items-center justify-between hover:text-white transition-colors hover-trigger" data-cursor-text="REACT">
-                  <span>Frontend Architecture</span>
-                  <ArrowUpRight className="w-4 h-4 opacity-50" />
-                </li>
-                <li className="flex items-center justify-between hover:text-white transition-colors hover-trigger" data-cursor-text="WEBGL">
-                  <span>Creative Coding (WebGL)</span>
-                  <ArrowUpRight className="w-4 h-4 opacity-50" />
-                </li>
-                <li className="flex items-center justify-between hover:text-white transition-colors hover-trigger" data-cursor-text="UI/UX">
-                  <span>Interaction Design</span>
-                  <ArrowUpRight className="w-4 h-4 opacity-50" />
-                </li>
-                <li className="flex items-center justify-between hover:text-white transition-colors hover-trigger" data-cursor-text="RUST">
-                  <span>Systems Engineering</span>
-                  <ArrowUpRight className="w-4 h-4 opacity-50" />
-                </li>
-              </ul>
-            </motion.div>
-
-            <motion.div 
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.9, duration: 1 }}
-            >
-              <h3 className="text-sm font-mono tracking-widest uppercase text-white/50 mb-6 border-b border-white/10 pb-4">Experience</h3>
-              <div className="space-y-8">
-                <div className="hover-trigger" data-cursor-text="CURRENT">
-                  <div className="flex justify-between items-baseline mb-1">
-                    <h4 className="text-white font-bold text-xl">Tech Innovators Inc.</h4>
-                    <span className="text-xs font-mono text-cyan-400">2023 - Present</span>
-                  </div>
-                  <p className="text-slate-500">Senior Frontend Engineer</p>
-                </div>
-                <div className="hover-trigger" data-cursor-text="PAST">
-                  <div className="flex justify-between items-baseline mb-1">
-                    <h4 className="text-white font-bold text-xl">Creative Agency</h4>
-                    <span className="text-xs font-mono text-slate-500">2021 - 2023</span>
-                  </div>
-                  <p className="text-slate-500">Frontend Developer</p>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </div>
+      <main className="relative z-10">
+        <AboutHero />
+        <Experience />
+        <SkillsGrid />
+      </main>
     </motion.div>
   );
 }
