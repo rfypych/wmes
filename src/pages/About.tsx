@@ -17,7 +17,7 @@ export default function About() {
       exit={{ opacity: 0 }}
       className="min-h-screen bg-stone-950 pt-40 px-6 md:px-20 pb-40"
     >
-      <div className="max-w-5xl mx-auto space-y-24 md:space-y-48">
+      <div className="max-w-screen-2xl mx-auto space-y-24 md:space-y-48">
         <section className="space-y-8 md:space-y-16">
           <div className="flex items-center gap-3 md:gap-6 relative z-10">
             <div className="w-10 md:w-16 h-px bg-stone-800" />

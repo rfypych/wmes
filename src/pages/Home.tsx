@@ -90,7 +90,7 @@ export default function Home() {
 
       {/* Narrative Section */}
       <section className="relative px-6 md:px-20 py-24 md:py-60 z-20 bg-stone-950">
-        <div className="max-w-screen-xl mx-auto grid md:grid-cols-2 gap-16 md:gap-32 items-center">
+        <div className="max-w-screen-2xl mx-auto grid md:grid-cols-2 gap-16 md:gap-32 items-center">
           <div className="space-y-8 md:space-y-16">
             <motion.h2 
               initial={{ y: 60, opacity: 0 }}
