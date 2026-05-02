@@ -8,7 +8,7 @@ export default function Contact() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="min-h-screen bg-stone-950 pt-28 sm:pt-32 md:pt-44 px-6 md:px-20 pb-24 md:pb-40 overflow-x-hidden relative"
+      className="min-h-screen bg-stone-950 pt-40 px-6 md:px-20 pb-24 md:pb-40 overflow-x-hidden relative"
     >
       <div className="max-w-screen-2xl mx-auto w-full relative">
         <header className="mb-12 md:mb-32 border-b border-stone-900 pb-6 md:pb-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-6 md:gap-8 overflow-hidden">

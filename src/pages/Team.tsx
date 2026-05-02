@@ -19,7 +19,7 @@ export default function Team() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="min-h-screen bg-stone-950 pt-32 px-6 md:px-20 pb-40"
+      className="min-h-screen bg-stone-950 pt-40 px-6 md:px-20 pb-40"
     >
       <div className="max-w-screen-2xl mx-auto">
         <header className="mb-16 md:mb-32 flex flex-col md:flex-row justify-between items-start md:items-end border-b border-stone-900 pb-12 md:pb-20 gap-8 relative group overflow-hidden">
