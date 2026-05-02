@@ -47,7 +47,7 @@ export default function Team() {
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
               viewport={{ once: true, margin: "-5%" }}
-              className="group bg-stone-950 p-4 sm:p-6 md:p-12 space-y-4 sm:space-y-6 md:space-y-10 hover:bg-stone-900/10 transition-all duration-700 flex flex-col"
+              className={`group bg-stone-950 p-4 sm:p-6 md:p-12 space-y-4 sm:space-y-6 md:space-y-10 hover:bg-stone-900/10 transition-all duration-700 flex flex-col ${personnel.length % 2 !== 0 && i === personnel.length - 1 ? 'col-span-2 lg:col-span-1' : ''}`}
             >
               <div className="aspect-[4/3] sm:aspect-square bg-stone-900/20 border border-stone-900/60 relative overflow-hidden group-hover:border-stone-700 transition-colors duration-500 rounded-sm">
                  {/* Technical watermark */}

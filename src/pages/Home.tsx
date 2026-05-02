@@ -161,11 +161,11 @@ export default function Home() {
               { id: "X-04", title: "Network Audit", desc: "Deep packet inspection and perimeter defense mapping." },
               { id: "S-05", title: "Threat Modeling", desc: "Predictive analysis of attack vectors and architectural hardening." },
               { id: "C-06", title: "Cryptographic Analysis", desc: "Evaluation of encryption standards and implementation entropy." }
-            ].map((s, i) => (
+            ].map((s, i, arr) => (
               <motion.div 
                 key={i} 
                 initial={{ opacity: 1, y: 0 }}
-                className="bg-stone-950 p-4 sm:p-6 md:p-10 lg:p-16 space-y-4 md:space-y-12 group hover:bg-stone-900/10 transition-all duration-700 relative overflow-hidden"
+                className={`bg-stone-950 p-4 sm:p-6 md:p-10 lg:p-16 space-y-4 md:space-y-12 group hover:bg-stone-900/10 transition-all duration-700 relative overflow-hidden ${arr.length % 2 !== 0 && i === arr.length - 1 ? 'col-span-2 lg:col-span-1' : ''}`}
               >
                 {/* ID Watermark */}
                 <span className="absolute top-4 right-4 md:top-8 md:right-8 font-mono text-[7px] md:text-[10px] text-stone-800 uppercase tracking-widest group-hover:text-stone-400 transition-colors">[{s.id}]</span>
