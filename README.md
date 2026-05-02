@@ -1,20 +1,31 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# W.M.E.S Collective
 
-# Run and deploy your AI Studio app
+W.M.E.S Collective is a conceptual website designed to represent a professional ecosystem where technical discovery meets ethical standards. Built with a minimalist, hacker-inspired aesthetic.
 
-This contains everything you need to run your app locally.
+## Features
 
-View your app in AI Studio: https://ai.studio/apps/6f76adee-bf1f-46e6-8041-03901cf9dc0e
+- **3D ASCII Art Models**: Animated 3D ASCII graphics rendered natively using React components.
+- **Responsive Grid Layouts**: Designed with a clean and aesthetic grid system that scales smoothly to mobile viewports.
+- **Smooth Animations**: Powered by `motion/react` for elegant page transitions and micro-interactions.
+- **Terminal Aesthetics**: Minimalist typography (`JetBrains Mono`, `Instrument Serif`) and custom noise-texture backgrounds.
 
-## Run Locally
+## Getting Started
 
-**Prerequisites:**  Node.js
+**Prerequisites:** Node.js (v16+)
 
-
-1. Install dependencies:
+1. **Install dependencies:**
    `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+
+2. **Configure environment:**
+   *(Optional)* If you are deploying via AI Studio, copy `.env.example` to `.env.local` and add your `GEMINI_API_KEY`.
+
+3. **Run the development server:**
+   `npm run dev` (run this locally to start the Vite dev server)
+
+## Building for Production
+
+To build the application for production, simply run:
+`npm run build`
+
+Then you can preview it with:
+`npm run preview`

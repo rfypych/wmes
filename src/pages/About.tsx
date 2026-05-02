@@ -28,7 +28,7 @@ export default function About() {
             <h1 className="text-6xl md:text-[12vw] font-serif italic leading-none tracking-tighter text-stone-200 relative z-10">Archive.</h1>
             
             {/* Background ASCII Animation backdrop */}
-            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-10 group-hover:opacity-30 transition-all duration-1000 pointer-events-none scale-110 md:scale-125">
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-15 group-hover:opacity-30 transition-all duration-1000 pointer-events-none scale-[1.8] sm:scale-110 md:scale-125 flex items-center justify-center w-full overflow-hidden">
                <AsciiCube />
             </div>
           </div>
@@ -47,7 +47,7 @@ export default function About() {
               </div>
             </div>
             <div className="md:col-span-3">
-              <div className="grid grid-cols-1 sm:grid-cols-2 bg-stone-900 border border-stone-800 gap-px">
+              <div className="grid grid-cols-1 md:grid-cols-2 bg-stone-900 border border-stone-800 gap-px">
                 {missions.map((m, i) => (
                   <motion.div 
                     key={i} 
@@ -55,7 +55,7 @@ export default function About() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: i * 0.1 }}
                     viewport={{ once: true }}
-                    className={`bg-stone-950 p-6 md:p-10 group hover:bg-stone-900/10 transition-all duration-500 flex flex-col justify-between ${i === 4 ? 'sm:col-span-2 aspect-auto py-12' : 'aspect-square sm:aspect-auto sm:min-h-[250px]'}`}
+                    className={`bg-stone-950 p-6 md:p-10 group hover:bg-stone-900/10 transition-all duration-500 flex flex-col justify-between ${i === 4 ? 'md:col-span-2 aspect-auto py-12' : 'aspect-[4/3] md:aspect-auto md:min-h-[250px]'}`}
                   >
                     <div className="space-y-4 md:space-y-6">
                       <span className="text-[9px] md:text-[10px] font-mono text-stone-800 font-bold group-hover:text-stone-600 transition-colors">0{i + 1}</span>

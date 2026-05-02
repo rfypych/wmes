@@ -29,7 +29,7 @@ export default function Team() {
           </div>
           
           {/* Background Visualbackdrop */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-10 group-hover:opacity-30 transition-all duration-1000 pointer-events-none scale-125 md:scale-150">
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-10 group-hover:opacity-30 transition-all duration-1000 pointer-events-none scale-[2.5] sm:scale-125 md:scale-150 flex items-center justify-center w-full overflow-hidden">
             <AsciiSphere />
           </div>
 
@@ -39,7 +39,7 @@ export default function Team() {
           </div>
         </header>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 bg-stone-900 border border-stone-800 gap-px overflow-hidden">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 bg-stone-900 border border-stone-800 gap-px overflow-hidden">
           {personnel.map((member, i) => (
             <motion.div
               key={i}
@@ -49,12 +49,12 @@ export default function Team() {
               viewport={{ once: true, margin: "-5%" }}
               className="group bg-stone-950 p-6 sm:p-8 md:p-12 space-y-6 md:space-y-10 hover:bg-stone-900/10 transition-all duration-700 flex flex-col"
             >
-              <div className="aspect-square bg-stone-900/20 border border-stone-900/60 relative overflow-hidden group-hover:border-stone-700 transition-colors duration-500 rounded-sm">
+              <div className="aspect-[4/3] sm:aspect-square bg-stone-900/20 border border-stone-900/60 relative overflow-hidden group-hover:border-stone-700 transition-colors duration-500 rounded-sm">
                  {/* Technical watermark */}
                  <div className="absolute top-3 right-3 sm:top-4 sm:right-4 font-mono text-[6px] sm:text-[7px] text-stone-800 uppercase tracking-widest z-20 group-hover:text-stone-600 transition-colors">
                     REF // {member.id}
                  </div>
-                 <div className="absolute inset-0 flex items-center justify-center opacity-5 group-hover:opacity-20 transition-all duration-1000 scale-90 group-hover:scale-110">
+                 <div className="absolute inset-0 flex items-center justify-center opacity-10 group-hover:opacity-30 transition-all duration-1000 scale-[1.5] sm:scale-90 group-hover:scale-[1.8] sm:group-hover:scale-110 overflow-hidden pointer-events-none">
                     <AsciiSphere />
                  </div>
                  <div className="absolute bottom-4 left-4 h-1 w-8 bg-stone-900 group-hover:bg-stone-700 transition-colors z-20" />
