@@ -16,10 +16,7 @@ W.M.E.S Collective is a conceptual website designed to represent a professional 
 1. **Install dependencies:**
    `npm install`
 
-2. **Configure environment:**
-   *(Optional)* If you are deploying via AI Studio, copy `.env.example` to `.env.local` and add your `GEMINI_API_KEY`.
-
-3. **Run the development server:**
+2. **Run the development server:**
    `npm run dev` (run this locally to start the Vite dev server)
 
 ## Building for Production
