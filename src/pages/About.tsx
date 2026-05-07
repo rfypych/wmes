@@ -17,7 +17,7 @@ export default function About() {
       exit={{ opacity: 0 }}
       className="min-h-screen bg-stone-950 pt-40 px-6 md:px-20 pb-40"
     >
-      <div className="max-w-5xl mx-auto space-y-24 md:space-y-48">
+      <div className="max-w-screen-2xl mx-auto space-y-24 md:space-y-48">
         <section className="space-y-8 md:space-y-16">
           <div className="flex items-center gap-3 md:gap-6 relative z-10">
             <div className="w-10 md:w-16 h-px bg-stone-800" />
@@ -28,7 +28,7 @@ export default function About() {
             <h1 className="text-6xl md:text-[12vw] font-serif italic leading-none tracking-tighter text-stone-200 relative z-10">Archive.</h1>
             
             {/* Background ASCII Animation backdrop */}
-            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-10 group-hover:opacity-30 transition-all duration-1000 pointer-events-none scale-110 md:scale-125">
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-15 group-hover:opacity-30 transition-all duration-1000 pointer-events-none scale-[1.8] sm:scale-110 md:scale-125 flex items-center justify-center w-full overflow-hidden">
                <AsciiCube />
             </div>
           </div>
@@ -47,7 +47,7 @@ export default function About() {
               </div>
             </div>
             <div className="md:col-span-3">
-              <div className="grid grid-cols-1 sm:grid-cols-2 bg-stone-900 border border-stone-800 gap-px">
+              <div className="grid grid-cols-2 bg-stone-900 border border-stone-800 gap-px">
                 {missions.map((m, i) => (
                   <motion.div 
                     key={i} 
@@ -55,11 +55,11 @@ export default function About() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: i * 0.1 }}
                     viewport={{ once: true }}
-                    className={`bg-stone-950 p-6 md:p-10 group hover:bg-stone-900/10 transition-all duration-500 flex flex-col justify-between ${i === 4 ? 'sm:col-span-2 aspect-auto py-12' : 'aspect-square sm:aspect-auto sm:min-h-[250px]'}`}
+                    className={`bg-stone-950 p-4 sm:p-6 md:p-10 group hover:bg-stone-900/10 transition-all duration-500 flex flex-col justify-between ${missions.length % 2 !== 0 && i === missions.length - 1 ? 'col-span-2 aspect-auto py-8 md:py-12' : 'aspect-[4/3] sm:aspect-square md:aspect-auto md:min-h-[250px]'}`}
                   >
                     <div className="space-y-4 md:space-y-6">
                       <span className="text-[9px] md:text-[10px] font-mono text-stone-800 font-bold group-hover:text-stone-600 transition-colors">0{i + 1}</span>
-                      <p className="text-sm md:text-lg font-light text-stone-400 group-hover:text-stone-200 transition-colors leading-snug">
+                      <p className="text-[10px] sm:text-xs md:text-base font-light text-stone-400 group-hover:text-stone-200 transition-colors leading-snug">
                         {m}
                       </p>
                     </div>
